@@ -7,7 +7,11 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { and, asc, eq, sql } from "drizzle-orm";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 export interface StoreBackend {
     migrate: () => void;
     listen: () => void;
@@ -111,7 +115,11 @@ export class AiMessageStoreBackend implements StoreBackend {
         );
     }
     async migrate() {
-        await migrate(this.#db, { migrationsFolder: './dist/drizzle' });
+        try {
+            await migrate(this.#db, { migrationsFolder: `${__dirname}/drizzle` });
+        } catch(e: any) {
+            console.log(e.message);
+        }
         return;
     }
     listen() {

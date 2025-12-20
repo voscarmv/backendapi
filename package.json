@@ -1,6 +1,6 @@
 {
   "name": "@voscarmv/aimessagestore",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Message storage and retrieval for aichatbot framework ",
   "keywords": [
     "ai",
