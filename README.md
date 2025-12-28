@@ -1,6 +1,6 @@
 # backendapi
 
-A template for creating general-purpose Postgres/Express backend APIs, but works very nicely with [@voscarmv/aichatbot](https://npmjs.com/@voscarmv/aichatbot) projects.
+A template for creating general-purpose Postgres/Express backend APIs. Works very nicely with [@voscarmv/aichatbot](https://npmjs.com/@voscarmv/aichatbot) projects.
 
 ## Installation and usage
 
