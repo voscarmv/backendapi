@@ -13,4 +13,4 @@ npx migrate --dburl postgres://yourusername:yourpassword@yourhost/yourdbname
 npm run start
 ```
 
-This should run to server you define in `server.ts`. See [@voscarmv/apigen](https://npmjs.com/@voscarmv/apigen) for more configuration options.
+This should run the server from `server.ts`. See [@voscarmv/apigen](https://npmjs.com/@voscarmv/apigen) for more server configuration options.
