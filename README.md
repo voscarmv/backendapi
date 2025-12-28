@@ -1,4 +1,4 @@
-# aidb
+# backendapi
 
 A template for creating general-purpose Postgres/Express backend APIs, but works very nicely with [@voscarmv/aichatbot](https://npmjs.com/@voscarmv/aichatbot) projects.
 
