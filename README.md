@@ -1,40 +1,16 @@
-# aimessagestore
+# aidb
 
-Message storage and retrieval backend for [@voscarmv/aichatbot](https://www.npmjs.com/package/@voscarmv/aichatbot)
+A template for creating general-purpose Postgres/Express backend APIs, but works very nicely with [@voscarmv/aichatbot](https://npmjs.com/@voscarmv/aichatbot) projects.
 
-## Usage
-
-You may use this as per [the demo.](https://github.com/voscarmv/aibot)
-
-Or as a standalone backend for a @voscarmv/aichatbot project. For that, install `postgresql` and create a new username, password and database, with this script:
+## Installation and usage
 
 ```bash
-#!/bin/bash
-
-## Install postgresql
-if grep -e 'DATABASE_URL=' ./.env ; then
-    exit
-fi
-
-sudo apt install -y postgresql postgresql-contrib
-
-read -p "Postgres username: " PGUSER
-read -s -p "Postgres password: " PASS
-echo
-read -p "Database name: " DB
-
-sudo -u postgres psql <<EOF
-CREATE DATABASE $DB;
-CREATE USER $PGUSER WITH PASSWORD '$PASS';
-GRANT ALL PRIVILEGES ON DATABASE $DB TO $PGUSER;
-\c $DB
-GRANT ALL ON SCHEMA public TO $PGUSER;
-EOF
-
-echo "DATABASE_URL=postgres://$PGUSER:$PASS@localhost/$DB" >> .env
-echo "✅ Database, user, and .env file created. Edit .env if needed."
+npm install
+npm run build
+npm run db:generate
+npx dbinstall
+npx migrate --dburl postgres://yourusername:yourpassword@yourhost/yourdbname
+npm run start
 ```
 
-You may now run `npx migrate --dburl postgres://username:password@host/database` with your own DB URL to migrate the schema.
-
-And then just run an instance of `MessageStoreBackend()` as in [this example.](https://github.com/voscarmv/aibot/blob/main/src/server.ts)
+This should run to server you define in `server.ts`. See [@voscarmv/apigen](https://npmjs.com/@voscarmv/apigen) for more configuration options.

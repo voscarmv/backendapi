@@ -1,1 +1,3 @@
-export { BackendDB } from "./server.js";
+import { BackendDB } from "./server.js";
+
+BackendDB.listen();
