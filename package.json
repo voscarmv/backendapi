@@ -1,30 +1,34 @@
 {
-  "name": "@voscarmv/aimessagestore",
-  "version": "1.0.8",
-  "description": "Message storage and retrieval for aichatbot framework ",
+  "name": "@voscarmv/aidb",
+  "version": "1.0.0",
+  "description": "AI DB Backend API Template",
   "keywords": [
     "ai",
-    "api",
-    "database",
+    "db",
+    "backend",
+    "template",
     "drizzle",
-    "chatbot",
-    "message",
-    "storage",
-    "store",
-    "queue",
-    "concurrent",
-    "im",
-    "telegram",
-    "whatsapp",
-    "signal"
+    "express",
+    "typescript",
+    "helmet",
+    "morgan",
+    "cors",
+    "pg",
+    "postgres",
+    "psql",
+    "orm",
+    "vector",
+    "embedding",
+    "pgvector",
+    "semantic"
   ],
-  "homepage": "https://github.com/voscarmv/aimessagestore#readme",
+  "homepage": "https://github.com/voscarmv/aidb#readme",
   "bugs": {
-    "url": "https://github.com/voscarmv/aimessagestore/issues"
+    "url": "https://github.com/voscarmv/aidb/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voscarmv/aimessagestore.git"
+    "url": "git+https://github.com/voscarmv/aidb.git"
   },
   "license": "GPL-3.0-or-later",
   "author": "Oscar Mier",
@@ -41,6 +45,7 @@
     "migrate": "./dist/migrate.js"
   },
   "dependencies": {
+    "@voscarmv/apigen": "^1.0.2",
     "commander": "^14.0.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
