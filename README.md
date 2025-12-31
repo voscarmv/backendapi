@@ -5,11 +5,11 @@ A template for creating general-purpose Postgres/Express backend APIs. Works ver
 ## Installation and usage
 
 ```bash
+npx dbinstall
 npm install
 npm run build
 npm run db:generate
-npx dbinstall
-(set -a; . .env ; npx migrate --dburl $DATABASE_URL)
+npm run db:migrate
 npm run start
 ```
 
