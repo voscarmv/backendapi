@@ -9,10 +9,13 @@ export const BackendDB = new DynamicStoreBackend({
 });
 
 // Add a public route
-BackendDB.route('get', '/messages', async (db, req, res) => {
+BackendDB.route({
+    method: 'get',
+    path: '/messages',
+    handler: async (db, req, res) => {
     const allUsers = await db.select().from(messages);
     res.json(allUsers);
-});
+}});
 
 // Add a route with auth
 const requireAuth = (req: Request, res: Response, next: () => void): void => {
@@ -21,7 +24,11 @@ const requireAuth = (req: Request, res: Response, next: () => void): void => {
     next();
 };
 
-BackendDB.route('post', '/messages', async (db, req, res) => {
+BackendDB.route({
+    method: 'post',
+    path: '/messages',
+    middlewares: [requireAuth],
+    handler: async (db, req, res) => {
     const newUser = await db.insert(messages).values(req.body).returning();
     res.json(newUser[0]);
-}, requireAuth);
+}});
