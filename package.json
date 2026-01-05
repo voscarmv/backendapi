@@ -42,9 +42,6 @@
     "db:generate": "npx drizzle-kit generate",
     "db:migrate": "npx drizzle-kit migrate"
   },
-  "bin": {
-    "migrate": "./dist/migrate.js"
-  },
   "dependencies": {
     "@voscarmv/apigen": "^2.0.1",
     "dotenv": "^17.2.3",
