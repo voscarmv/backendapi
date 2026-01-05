@@ -10,6 +10,7 @@ npm install
 npm run build
 npm run db:generate
 npm run db:migrate
+npx tsc --build
 npm run start
 ```
 
