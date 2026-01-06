@@ -1,6 +1,7 @@
 import { DynamicStoreBackend } from '@voscarmv/apigen';
 import { messages } from './schema.js'; // Your Drizzle schema
 import type { Request, Response } from 'express';
+import 'dotenv/config';
 
 // Create backend instance
 export const BackendDB = new DynamicStoreBackend({
